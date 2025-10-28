@@ -15,6 +15,10 @@ API_KEY = os.getenv("API_KEY")
 #AZURE
 STORAGE_ACCOUNT_NAME = os.getenv("STORAGE_ACCOUNT_NAME")
 STORAGE_ACCOUNT_KEY = os.getenv("STORAGE_ACCOUNT_KEY")
-ACCOUNT_URL = os.getenv("ACCOUNT_URL")
-CONTAINER_NAME = "data"
 
+# Konstruera ACCOUNT_URL från STORAGE_ACCOUNT_NAME om inte explicit satt
+ACCOUNT_URL = os.getenv("ACCOUNT_URL")
+if ACCOUNT_URL is None and STORAGE_ACCOUNT_NAME:
+    ACCOUNT_URL = f"https://{STORAGE_ACCOUNT_NAME}.dfs.core.windows.net"
+
+CONTAINER_NAME = "data"
