@@ -1,0 +1,13 @@
+# hemligheter
+.env
+.venv
+
+# körloggar
+pipeline/logs/
+
+# pycache
+__pycache__/
+*.pyc
+
+# notebooks autosaves
+.ipynb_checkpoints/
